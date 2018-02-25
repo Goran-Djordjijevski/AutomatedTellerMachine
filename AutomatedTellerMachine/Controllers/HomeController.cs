@@ -26,5 +26,22 @@ namespace AutomatedTellerMachine.Controllers
 
             return View();
         }
+
+        public ActionResult Foo()
+        {
+            return View(viewName: "About");
+        }
+
+        public ActionResult Serial(string letterCase)
+        {
+            string serial = "ASPNETMVC5";
+
+            if (letterCase == "lower")
+            {
+                return Content(serial.ToLower());
+            }
+
+            return Content(serial);
+        }
     }
 }
